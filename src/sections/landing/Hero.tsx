@@ -8,14 +8,14 @@ interface HeroProps {
   travelers: number;
   treasures: number;
   cities: number;
-  refMostPicked?: React.RefObject<HTMLDivElement>;
+  refMostPicked: React.RefObject<HTMLDivElement | null>;
 }
 
 const Hero = (props: HeroProps) => {
   function showMostPicked() {
     window.scrollTo({
-      top: props.refMostPicked
-        ? props.refMostPicked?.current?.offsetTop - 30
+      top: props.refMostPicked.current
+        ? props.refMostPicked.current?.offsetTop - 30
         : 0,
       behavior: "smooth",
     });
