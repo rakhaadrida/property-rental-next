@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Button from "../../components/button/Button";
+import { getImageSrc } from "@/utils/GetImage";
 
 interface MostPicked {
   _id: string;
@@ -30,10 +32,11 @@ const MostPicked = (props: MostPickedProps) => {
                   <span> per {item.unit}</span>
                 </div>
                 <figure className="img-wrapper">
-                  <img
-                    src={item.imageUrl}
+                  <Image
+                    src={getImageSrc(item.imageUrl)}
                     alt={item.name}
                     className="img-cover"
+                    fill
                   />
                 </figure>
                 <div className="meta-wrapper">
