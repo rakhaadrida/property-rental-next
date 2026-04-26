@@ -18,10 +18,7 @@ export default function Home() {
         cities={LandingPageSpecs.hero.cities}
         refMostPicked={refMostPicked}
       />
-      <MostPicked
-        data={LandingPageSpecs.mostPicked}
-        refMostPicked={refMostPicked}
-      />
+      <MostPicked data={LandingPageSpecs.mostPicked} ref={refMostPicked} />
       <Categories data={LandingPageSpecs.categories} />
       <Testimonial data={LandingPageSpecs.testimonial} />
     </>
