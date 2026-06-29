@@ -6,9 +6,24 @@ import Brand from "../brand/Brand";
 import Button from "../button/Button";
 import { Fade } from "react-awesome-reveal";
 
-const Navbar = () => {
+const Navbar = (props: { isCentered?: boolean }) => {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+
+  if (props.isCentered)
+    return (
+      <Fade>
+        <header className="spacing-sm">
+          <div className="container">
+            <nav className="navbar navbar-expand-lg navbar-light">
+              <Button className="brand-text-icon mx-auto" href="" type="link">
+                Stay<span className="text-gray-900">cation.</span>
+              </Button>
+            </nav>
+          </div>
+        </header>
+      </Fade>
+    );
 
   return (
     <Fade>

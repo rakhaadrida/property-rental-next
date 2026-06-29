@@ -6,12 +6,15 @@ import LandingPageSpecs from "../../specs/landingPage.json";
 import { useRef } from "react";
 import Categories from "@/sections/landing/Categories";
 import Testimonial from "@/sections/landing/Testimonial";
+import Navbar from "@/components/navbar/Navbar";
+import Footer from "@/components/footer/Footer";
 
 export default function Home() {
   const refMostPicked = useRef<HTMLDivElement>(null);
 
   return (
     <>
+      <Navbar />
       <Hero
         travelers={LandingPageSpecs.hero.travelers}
         treasures={LandingPageSpecs.hero.treasures}
@@ -21,6 +24,7 @@ export default function Home() {
       <MostPicked data={LandingPageSpecs.mostPicked} ref={refMostPicked} />
       <Categories data={LandingPageSpecs.categories} />
       <Testimonial data={LandingPageSpecs.testimonial} />
+      <Footer />
     </>
   );
 }
